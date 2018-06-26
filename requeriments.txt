@@ -2,10 +2,14 @@ beautifulsoup4==4.6.0
 bottle==0.12.13
 certifi==2018.4.16
 chardet==3.0.4
+dateutils==0.6.6
 html5lib==1.0.1
 idna==2.7
 mongoengine==0.15.0
+mongoengine-goodjson==1.1.1
 pymongo==3.6.1
+python-dateutil==2.7.3
+pytz==2018.4
 requests==2.19.1
 six==1.11.0
 urllib3==1.23
