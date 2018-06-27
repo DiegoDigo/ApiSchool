@@ -1,7 +1,4 @@
 venvs
 .idea/
-
-
-
-
-
+*/__pycache__/
+*.pyc
