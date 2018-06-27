@@ -1,4 +1,4 @@
-# MicroService busca de escolas do Brasil 
+# MicroService de busca de escolas do Brasil 
 
 Serviço disponibilizará a listagem de escolas Estaduaes, Municipais e Rurais.
 Podendo buscar escolas por ID , Nome, Rural ou não. 
