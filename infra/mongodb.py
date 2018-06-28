@@ -5,7 +5,6 @@ connect('schools', host='localhost', port=27017)
 
 
 def insert(data: list, name: str):
-    print(data[1])
     School(code_inep=data[0],
            address=Address(address=data[1].strip().capitalize(),
                            neighborhood=data[2].capitalize(),
