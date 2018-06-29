@@ -1,4 +1,3 @@
-import json
 from bottle import Bottle, response, jinja2_view, TEMPLATE_PATH
 from infra import mongodb
 from infra.loading import loading_data
