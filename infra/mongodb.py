@@ -1,4 +1,6 @@
 from mongoengine import connect
+
+from models.enums import MunicipalityCounty
 from models.school import School, Address
 from utility.decorations import log
 
@@ -22,6 +24,10 @@ def find_all() -> list:
     return School.objects().to_json()
 
 
+def count_loading(state: str) -> int:
+    return len(School.objects.filter(address__state=MunicipalityCounty.get_county(state)))
+
+
 def find_name(name: str) -> str:
     return School.objects(nameSchool=name).get().to_json()
 
@@ -31,8 +37,4 @@ def find_id(pk: str) -> str:
 
 
 def find_state_county(state: str, county: str) -> str:
-    return School.objects.filter(address__state=state, address__county=county).to_json()
-
-
-if __name__ == "__main__":
-    pprint(School.objects.filter(address__state='sao paulo', address__county='São paulo').to_json())
+    return School.objects.filter(address__state=MunicipalityCounty.get_county(state)).to_json()
