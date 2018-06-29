@@ -6,14 +6,9 @@ import logging
 
 logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s', level=logging.DEBUG)
 
-
-
-
-
 URL = "http://idebescola.inep.gov.br/ideb"
 
 if __name__ == "__main__":
-    print(f"inicio programa : {datetime.today().time()}")
     request = requests.post(f"{URL}/consulta-publica",
                             data={
                                 "pkCodEntidade": None,
@@ -30,7 +25,6 @@ if __name__ == "__main__":
     table_schools = a.find("table", {'class', 'table-listar-escola'}).find_all('tr', {'class', 'coluna'})
 
     for field in table_schools:
-        print(f"inicio request : {datetime.today().time()}")
         r = request = requests.get(f"{URL}/escola/dadosEscola/{field.find_all('td')[0].text}")
         a = Bs(r.content, "html5lib")
         c = a.find("table", {'class', 'tabela', 'table-dados-escola'}).find_all('tr')
@@ -39,4 +33,3 @@ if __name__ == "__main__":
             ls.append(campo.find_all("td")[1].text)
             logging.info(f'importando {campo.find_all("td")[1].text}')
         mongodb.insert(ls, a.find("legend", {'class', 'legend-dados-escola'}).text)
-
