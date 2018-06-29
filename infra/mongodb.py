@@ -1,9 +1,11 @@
 from mongoengine import connect
 from models.school import School, Address
+from utility.decorations import log
 
 connect('schools', host='localhost', port=27017)
 
 
+@log("inserindo")
 def insert(data: list, name: str):
     School(code_inep=data[0],
            address=Address(address=data[1].strip().capitalize(),

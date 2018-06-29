@@ -34,7 +34,7 @@ def get_county_state(state: str, county: str):
         response.headers['Content-Type'] = 'application/json'
         response.headers['Cache-Control'] = 'no-cache'
         response.status = 200
-        return mongodb.find_state_county(state, county)
+        return mongodb.find_state_county("São paulo", "São paulo")
     except Exception as e:
         response.status = 400
         return {"error": e}
