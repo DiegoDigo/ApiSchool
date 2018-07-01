@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>{{ title }}</title>
+    <style>
+        .main {
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .doc {
+            background: rgba(0, 0, 0, 0.9);
+            height: 100vh;
+        }
+
+        .docs {
+            padding-top: 15vh;
+        }
+
+        nav {
+            height: 75px;
+
+        }
+
+        div.nav-wrapper {
+            background-color: #039be5 !important;
+        }
+
+        nav a, ul {
+            margin: 5px;
+            font-weight: 600;
+        }
+
+        nav ul li a:hover {
+            background: #ffffff !important;
+            color: #039be5 !important;
+            transition: all .25s linear;
+        }
+
+        h1 {
+            color: #ffffff;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .btn-floating {
+            background-color: #039be5;
+        }
+
+        p {
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+<header class="navbar-fixed">
+    <nav>
+        <div class="nav-wrapper">
+            <div class="container">
+                <a href="#home" class="brand-logo scrollSuave">Logo</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="#document" class="scrollSuave">Documentação</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="main" id="home">
+    <div class="row">
+        <div class="col s12 center">
+            <h1>{{title}}</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam cum eaque, enim eum explicabo harum
+                odit porro saepe ut? Accusantium aliquam consectetur eveniet expedita iste labore laudantium, possimus
+                quidem ullam.</p>
+            <div>
+                <button class="btn-floating btn-large pulse">
+                    <a href="#document" class="scrollSuave">
+                        <i class="large material-icons ">keyboard_arrow_down</i>
+                    </a>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="doc" id="document">
+    <div class="row">
+        <div class="col s12">
+            <div class="docs">
+                <h1>Documentação</h1>
+                <div class="row">
+                    <div class="col s12">
+
+                        <div class="col s12">
+                            <ul class="tabs">
+                                <li class="tab"><a href="#test1">São Paulo</a></li>
+                                <li class="tab"><a href="#test2">São Paulo</a></li>
+                                <li class="tab"><a href="#test3">São Paulo</a></li>
+                                <li class="tab"><a href="#test4">São Paulo</a></li>
+                                <li class="tab"><a href="#test4">São Paulo</a></li>
+                                <li class="tab"><a href="#test4">São Paulo</a></li>
+                            </ul>
+                        </div>
+                        <div id="test2" class="col s12 "></div>
+                        <div id="test1" class="col s12">
+                            <table class="centered highlight" style="background-color: #ffffff">
+                                <thead>
+                                <tr>
+                                    <th>Code</th>
+                                    <th>Estado</th>
+                                </tr>
+                                </thead>
+
+                                <tbody>
+                                <tr>
+                                    <td>Alvin</td>
+                                    <td>Eclair</td>
+                                </tr>
+                                <tr>
+                                    <td>Alan</td>
+                                    <td>Jellybean</td>
+
+                                </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
+<script>
+    var $doc = $('html, body');
+    $('.scrollSuave').click(function () {
+        $doc.animate({
+            scrollTop: $($.attr(this, 'href')).offset().top
+        }, 500);
+        return false;
+    });
+    $(document).ready(function () {
+        $('.tabs').tabs();
+    });
+
+</script>
+</body>
+</html>

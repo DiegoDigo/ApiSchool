@@ -10,7 +10,7 @@ TEMPLATE_PATH[:] = ['templates']
 
 
 @app.route('/', name='home')
-@jinja2_view('teste.html')
+@jinja2_view('home.html')
 def home():
     return {'title': 'Hello world'}
 
